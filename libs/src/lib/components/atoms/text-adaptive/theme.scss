@@ -1,0 +1,186 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+@mixin weight {
+    &.normal {
+        font-weight: normal;
+    }
+
+    &.medium {
+        font-weight: 500;
+    }
+
+    &.bold {
+        font-weight: 700;
+    }
+
+    &.extrabold {
+        font-weight: 800;
+    }
+}
+
+@mixin color {
+    &.color-default {
+        color: inherit;
+    }
+    &.color-special-white {
+        color: $special-white;
+    }
+    &.color-black-primary {
+        color: $black-primary;
+    }
+    &.color-black-secondary {
+        color: $black-secondary;
+    }
+    &.color-brand-primary {
+        color: $brand-primary;
+    }
+    &.color-special-disabled-primary {
+        color: $special-disabled-primary;
+    }
+    &.color-general-secondary {
+        color: $general-secondary;
+    }
+    &.color-error-primary {
+        color: $error-primary;
+    }
+    &.color-success-primary {
+        color: $success-primary;
+    }
+}
+
+@mixin text-transform {
+    &.text-transform-uppercase {
+        text-transform: uppercase;
+    }
+    &.text-transform-lowercase {
+        text-transform: lowercase;
+    }
+}
+
+@mixin text-position {
+    &.text-position-left {
+        text-align: left;
+    }
+    &.text-position-center {
+        text-align: center;
+    }
+    &.text-position-right {
+        text-align: right;
+    }
+}
+
+.text-adaptive {
+    &.type-text-default {
+        &.text-size-12 {
+            line-height: 16px;
+        }
+        &.text-size-14 {
+            line-height: 16px;
+        }
+        &.text-size-15 {
+            line-height: 24px;
+        }
+        &.text-size-16 {
+            line-height: 24px;
+        }
+        &.text-size-18 {
+            line-height: 28px;
+        }
+        &.text-size-18 {
+            line-height: 24px;
+        }
+        &.text-size-24 {
+            line-height: 32px;
+        }
+    }
+
+    &.type-text-subtitle {
+        &.text-size-12 {
+            line-height: 16px;
+        }
+        &.text-size-14 {
+            line-height: 21px;
+        }
+        &.text-size-18 {
+            line-height: 24px;
+        }
+    }
+
+    &.type-text-paragraph {
+        &.text-size-15 {
+            line-height: 24px;
+        }
+        &.text-size-18 {
+            line-height: 28px;
+        }
+    }
+
+    &.type-text-special-link {
+        color: $brand-primary;
+
+        &.text-size-12 {
+            line-height: 16px;
+        }
+        &.text-size-14 {
+            line-height: 16px;
+        }
+        &.text-size-18 {
+            line-height: 16px;
+        }
+    }
+
+    &.type-text-special-label {
+        &.text-size-14 {
+            line-height: 16px;
+        }
+
+        &.text-size-16 {
+            line-height: 22px;
+        }
+    }
+
+    &.type-text-special-form {
+        &.text-size-14 {
+            line-height: 18px;
+        }
+    }
+
+    &.type-text-special-button {
+        &.text-size-14 {
+            line-height: 16px;
+        }
+    }
+
+    @include color;
+    @include text-transform;
+    @include weight;
+    @include text-position;
+}
+
+.text-size-12 {
+    font-size: 12px;
+}
+
+.text-size-14 {
+    font-size: 14px;
+}
+
+.text-size-15 {
+    font-size: 15px;
+}
+
+.text-size-16 {
+    font-size: 16px;
+}
+
+.text-size-18 {
+    font-size: 18px;
+}
+
+.text-size-20 {
+    font-size: 20px;
+}
+
+.text-size-24 {
+    font-size: 24px;
+}

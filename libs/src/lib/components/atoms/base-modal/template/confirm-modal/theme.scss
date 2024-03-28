@@ -1,0 +1,46 @@
+@import "@/assets/styles/tokens/screen.scss";
+
+.confirm-modal {
+    @media screen and (max-width: $max-small-desktop) {
+        z-index: 11;
+    }
+
+    .base-modal__wrapper {
+        @media screen and (max-width: $max-small-desktop) {
+            max-width: 320px;
+            width: 100%;
+
+            height: auto;
+        }
+    }
+
+    .base-modal__content {
+        @media screen and (max-width: $max-small-desktop) {
+            padding-top: 16px;
+        }
+    }
+
+    &__wrapper {
+        max-width: 420px;
+    }
+
+    &__header {
+        .text-adaptive {
+            margin-top: 16px;
+        }
+
+        margin-bottom: 32px;
+    }
+
+    &__btn {
+        @media screen and (max-width: $max-small-desktop) {
+            display: flex;
+        }
+
+        button {
+            @media screen and (max-width: $max-small-desktop) {
+                width: 50%;
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-alert {
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    svg {
+        max-width: 16px;
+        min-width: 16px;
+        max-height: 16px;
+        min-height: 16px;
+    }
+
+    &.variant-success {
+        background-color: $success-ghost;
+
+        border: 1px solid $success-primary;
+
+        svg {
+            fill: $success-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $success-primary;
+        }
+    }
+
+    &.variant-warning {
+        background-color: $warning-ghost;
+
+        border: 1px solid $warning-primary;
+
+        svg {
+            fill: $warning-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $warning-primary;
+        }
+    }
+
+    &.variant-danger {
+        background-color: $error-ghost;
+
+        border: 1px solid $error-primary;
+
+        svg {
+            fill: $error-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $error-primary;
+        }
+    }
+
+    &.size {
+        &-large {
+            height: 40px;
+        }
+
+        &-medium {
+            height: 32px;
+        }
+
+        &-small {
+            height: 24px;
+        }
+    }
+
+    &.non-border {
+        border-color: transparent;
+    }
+}

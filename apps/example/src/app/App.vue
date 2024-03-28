@@ -1,7 +1,9 @@
-<script setup lang="ts">
-import NxWelcome from './NxWelcome.vue';
-</script>
-
 <template>
-  <NxWelcome title="example" />
+  <router-view></router-view>
 </template>
+
+<script setup lang="ts">
+
+
+
+</script>

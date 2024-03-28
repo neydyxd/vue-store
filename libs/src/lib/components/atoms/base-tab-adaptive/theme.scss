@@ -1,0 +1,22 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-tab-adaptive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 46px;
+    width: 100%;
+
+    border-bottom: 2px solid $special-disabled-primary;
+
+    padding: 0 16px;
+
+    &.active-tab {
+        .text-adaptive {
+            color: $brand-primary;
+        }
+
+        border-color: $brand-primary;
+    }
+}

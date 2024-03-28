@@ -1,0 +1,146 @@
+@import "../../../assets/styles/tokens/colors.scss";
+@import "../../../assets/styles/tokens/screen.scss";
+
+.button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    min-width: 32px;
+    min-height: 32px;
+
+    @media screen and (min-width: $small-desktop) {
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    background-color: $special-white;
+
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+        transition: 0.3s all ease-in-out;
+
+        svg {
+            transition: 0.3s all ease-in-out;
+        }
+    }
+
+    svg {
+        max-width: 24px;
+        max-height: 24px;
+
+        transition: 0.3s all ease-in-out;
+    }
+
+    &.variant-filled {
+        background-color: $brand-primary;
+
+        svg {
+            fill: $special-white;
+        }
+
+        &:hover {
+            background-color: $brand-hover;
+        }
+
+        &:disabled {
+            background-color: $special-disabled-secondary;
+
+            svg {
+                fill: $special-disabled-primary;
+            }
+        }
+    }
+
+    &.variant-stroke {
+        background-color: transparent;
+
+        border: 1px solid $brand-primary;
+
+        svg {
+            fill: $brand-primary;
+        }
+
+        &:hover {
+            border-color: $brand-hover;
+
+            svg {
+                fill: $brand-hover;
+            }
+        }
+
+        &:disabled {
+            border-color: $special-disabled-primary;
+
+            svg {
+                fill: $black-secondary;
+            }
+        }
+    }
+
+    &.variant-transparent {
+        background: rgba(255, 255, 255, 0.1);
+
+        svg {
+            fill: $special-white;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+    }
+
+    &.variant-ghost {
+        background: transparent;
+
+        svg {
+            fill: $brand-primary;
+        }
+
+        &:hover {
+            background: $brand-ghost;
+        }
+
+        &:disabled {
+            color: $special-disabled-primary;
+
+            svg {
+                fill: $special-disabled-primary;
+            }
+        }
+    }
+
+    &.button-icon__main-carousel {
+        width: 88px;
+        height: 56px;
+
+        background: rgba(255, 255, 255, 0.45);
+
+        &_next {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &.button-icon__shadow-carousel {
+        width: 56px;
+        height: 56px;
+
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        border-color: transparent;
+
+        box-shadow: 0 7px 16px 0 #d1d1d1;
+
+        background-color: $special-white;
+    }
+}

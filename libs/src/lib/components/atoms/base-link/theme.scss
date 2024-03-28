@@ -1,0 +1,13 @@
+.base-link {
+    display: flex;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+    }
+
+    svg {
+        max-width: 24px;
+        max-height: 24px;
+    }
+}

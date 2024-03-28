@@ -1,0 +1,37 @@
+.header-block {
+    margin: 36px 0;
+
+    .title-adaptive {
+        margin-bottom: 24px;
+    }
+
+    &.has-header-slot {
+        .header-block__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &.title-position-left {
+        .header-block__title {
+            text-align: left;
+        }
+    }
+
+    &.title-position-right {
+        .header-block__title {
+            text-align: right;
+        }
+    }
+
+    &.title-position-center {
+        .header-block__title {
+            text-align: center;
+
+            margin: auto;
+
+            max-width: 1024px;
+        }
+    }
+}

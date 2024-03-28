@@ -1,0 +1,14 @@
+@import "tokens/colors";
+
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+
+        background-color: $special-background;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $brand-primary;
+    }
+}

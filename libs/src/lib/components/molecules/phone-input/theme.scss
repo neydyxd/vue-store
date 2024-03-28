@@ -1,0 +1,53 @@
+.phone-input {
+    width: 100%;
+
+    label {
+        display: block;
+
+        margin-bottom: 16px;
+
+        pointer-events: none;
+    }
+
+    &__wrapper {
+        display: flex;
+
+        position: relative;
+    }
+
+    .vti__dropdown {
+        width: 100%;
+
+        position: unset;
+
+        &:hover {
+            background-color: transparent !important;
+        }
+        &.open {
+            background-color: transparent !important;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    .vti__dropdown-list {
+        width: 100%;
+
+        left: 0;
+        top: 100%;
+    }
+
+    .vue-tel-input {
+        border: none;
+
+        &:focus-within {
+            box-shadow: none;
+        }
+
+        input {
+            display: none;
+        }
+    }
+}

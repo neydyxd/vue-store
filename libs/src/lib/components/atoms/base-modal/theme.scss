@@ -1,0 +1,70 @@
+@import "@/assets/styles/tokens/colors.scss";
+@import "@/assets/styles/tokens/variables.scss";
+@import "@/assets/styles/tokens/screen.scss";
+
+.base-modal {
+    position: fixed;
+    z-index: 7;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-overlay-modal-or-popup;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.3s ease;
+
+    &__wrapper {
+        background-color: $special-white;
+
+        padding: 24px;
+
+        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.22));
+
+        @media screen and (max-width: $max-small-desktop) {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content {
+        position: relative;
+
+        @media screen and (max-width: $max-small-desktop) {
+            padding-top: 48px;
+
+            height: 100%;
+        }
+
+        svg.close {
+            max-width: 24px;
+            max-height: 24px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            cursor: pointer;
+
+            fill: $black-secondary;
+        }
+    }
+}
+
+.base-modal-enter {
+    opacity: 0;
+}
+
+.base-modal-leave-active {
+    opacity: 0;
+}
+
+.base-modal .base-modal__wrapper,
+.base-modal-leave-active .base-modal__wrapper {
+    transform: scale(1);
+}

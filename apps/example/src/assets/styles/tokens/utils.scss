@@ -1,0 +1,12 @@
+// Функция пропорционального ресайза от большего брейкпоинта к меньшему
+// min-size - размер к которому стремится ресайз у меньшего брекпоинта
+// default-size - изначальный размер элемента у максимального брейкпоинта
+@function calcResizeDesktop($minSize, $defaultSize) {
+    $result: calc(#{$minSize}px + (#{$defaultSize} - #{$minSize}) * ((100vw - 1080px) / (1600 - 1080)));
+    @return $result;
+}
+
+@function calcResizeMobile($minSize, $defaultSize) {
+    $result: calc(#{$minSize}px + (#{$defaultSize} - #{$minSize}) * ((100vw - 420px) / (1080 - 420)));
+    @return $result;
+}

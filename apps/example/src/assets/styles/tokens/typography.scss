@@ -1,0 +1,6 @@
+@mixin typography {
+    font-family: "Gotham", sans-serif;
+    font-weight: inherit;
+    font-feature-settings: "lnum";
+    font-variant-numeric: lining-nums;
+}

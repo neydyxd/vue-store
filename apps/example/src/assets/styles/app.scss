@@ -1,0 +1,43 @@
+@import "./tokens/screen";
+@import "./tokens/colors";
+@import "./tokens/typography";
+@import "indent-classnames";
+@import "./tokens/utils";
+@import "./tokens/icons";
+
+* {
+    box-sizing: border-box !important;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    @include typography;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 320px;
+    min-height: 100%;
+}
+
+// Временное свойство
+main {
+    font-size: 16px;
+    color: $black-primary;
+
+    @media screen and (max-width: $desktop) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

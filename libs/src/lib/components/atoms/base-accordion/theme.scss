@@ -1,0 +1,32 @@
+.base-accordion {
+    &__prefix-icon {
+        max-width: 24px;
+        max-height: 24px;
+
+        margin-right: 16px;
+    }
+
+    .v-expansion-panel--active > .v-expansion-panel-title {
+        min-height: 56px;
+    }
+
+    .v-expansion-panel-title {
+        padding: 16px;
+    }
+
+    .v-expansion-panel-text__wrapper {
+        padding: 0;
+
+        .base-link {
+            a {
+                width: 100%;
+                height: 56px;
+
+                display: flex;
+                align-items: center;
+
+                padding: 0 8px 0 56px;
+            }
+        }
+    }
+}

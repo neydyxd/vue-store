@@ -1,0 +1,142 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-tag {
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    svg {
+        max-width: 16px;
+        max-height: 16px;
+    }
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    &.variant-default {
+        background-color: $black-ghost;
+
+        svg {
+            fill: $black-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $black-primary;
+        }
+    }
+
+    &.variant-brand {
+        background-color: $brand-ghost;
+
+        svg {
+            fill: $brand-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $brand-primary;
+        }
+    }
+
+    &.variant-success {
+        background-color: $success-ghost;
+
+        svg {
+            fill: $success-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $success-primary;
+        }
+    }
+
+    &.variant-warning {
+        background-color: $warning-ghost;
+
+        svg {
+            fill: $warning-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $warning-primary;
+        }
+    }
+
+    &.variant-danger {
+        background-color: $error-ghost;
+
+        svg {
+            fill: $error-primary;
+        }
+
+        & > p,
+        span,
+        strong {
+            color: $error-primary;
+        }
+    }
+
+    &.size {
+        &-medium {
+            height: 40px;
+        }
+
+        &-small {
+            height: 32px;
+        }
+
+        &-extra-small {
+            height: 24px;
+        }
+    }
+
+    &.added-product-cart {
+        height: 72px;
+
+        padding: 0 24px;
+
+        background-color: $brand-primary;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+
+        .text-adaptive {
+            color: $special-white;
+
+            font-size: 14px;
+        }
+
+        svg {
+            max-width: 24px;
+            max-height: 24px;
+
+            fill: $special-white !important;
+
+            margin-right: 6px;
+        }
+    }
+
+    &.type {
+        &-discount {
+            height: 16px;
+
+            padding: 0 8px;
+        }
+    }
+}

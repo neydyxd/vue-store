@@ -1,0 +1,27 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-chips {
+    padding: 0 12px;
+
+    height: 32px;
+
+    background-color: $brand-ghost;
+
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+
+    button {
+        line-height: 0;
+
+        margin-left: 8px;
+    }
+
+    svg {
+        max-width: 16px;
+        max-height: 16px;
+
+        fill: $brand-primary;
+    }
+}

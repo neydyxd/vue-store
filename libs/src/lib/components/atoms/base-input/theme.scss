@@ -1,0 +1,187 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-input {
+    width: 100%;
+
+    svg {
+        max-width: 24px;
+        max-height: 24px;
+
+        &.suffix-icon {
+            margin-left: 12px;
+        }
+
+        &.prefix-icon {
+            margin-right: 12px;
+        }
+    }
+
+    svg {
+        fill: $brand-primary;
+    }
+
+    &__wrapper {
+        padding: 0 24px;
+
+        display: flex;
+        align-items: center;
+
+        &.variant {
+            &-outlined {
+                border: 1px solid $special-divider;
+
+                background-color: $special-white;
+
+                &.disabled-input {
+                    border: none;
+
+                    background: $black-ghost;
+
+                    input {
+                        user-select: none;
+                        pointer-events: none;
+
+                        color: $black-secondary;
+                    }
+
+                    svg {
+                        fill: $black-secondary;
+                    }
+                }
+
+                &.error-input {
+                    border-color: $error-secondary !important;
+                    color: $error-secondary !important;
+
+                    svg {
+                        fill: $error-secondary !important;
+                    }
+                }
+
+                &:hover {
+                    &:not(.focus-input, .disabled-input).empty-input {
+                        transition: 0.3s all ease-in-out;
+                        border-color: $brand-primary;
+                    }
+                }
+
+                &.focus-input {
+                    border: 2px solid $brand-secondary;
+                    box-shadow: 0 0 6px #bac4e0;
+                }
+            }
+
+            &-underlined {
+                border-bottom: 2px solid $special-divider;
+
+                &.disabled-input {
+                    border-bottom: 2px solid $special-disabled-primary;
+
+                    background: $black-ghost;
+
+                    input {
+                        user-select: none;
+                        pointer-events: none;
+
+                        color: $black-secondary;
+                    }
+
+                    svg {
+                        fill: $black-secondary;
+                    }
+                }
+
+                &.error-input {
+                    border-color: $error-secondary !important;
+                    color: $error-secondary !important;
+
+                    svg {
+                        fill: $error-secondary !important;
+                    }
+                }
+
+                &:hover {
+                    &:not(.focus-input, .disabled-input).empty-input {
+                        transition: 0.3s all ease-in-out;
+                        border-color: $brand-primary;
+                    }
+                }
+
+                &.focus-input {
+                    border-bottom: 2px solid $brand-secondary;
+                }
+            }
+        }
+
+        &.size {
+            &-giant {
+                height: 56px;
+            }
+
+            &-large {
+                height: 48px;
+            }
+
+            &-medium {
+                height: 40px;
+            }
+
+            &-small {
+                height: 32px;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+
+        font-size: 14px;
+        line-height: 18px;
+
+        color: $black-primary;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $black-secondary;
+        }
+
+        &:hover {
+            &:placeholder-shown {
+            }
+        }
+    }
+
+    label {
+        pointer-events: none;
+
+        color: $black-primary;
+
+        margin-bottom: 16px;
+
+        display: block;
+    }
+
+    &__messages {
+        display: flex;
+        align-items: center;
+
+        margin-top: 16px;
+
+        svg {
+            max-width: 16px;
+            max-height: 16px;
+
+            margin-right: 8px;
+
+            fill: $black-secondary;
+        }
+    }
+
+    &__error {
+        margin-top: 8px;
+    }
+}

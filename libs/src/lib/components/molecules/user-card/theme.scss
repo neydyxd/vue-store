@@ -1,0 +1,48 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.user-card {
+    padding: 24px;
+
+    border: 1px solid $special-divider;
+
+    button {
+        margin-top: 32px;
+    }
+
+    &__header {
+        display: flex;
+        gap: 16px;
+
+        padding-bottom: 32px;
+
+        border-bottom: 1px solid $special-divider;
+    }
+
+    &__personal-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__avatar {
+        width: 48px;
+        height: 48px;
+
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    &__contacts {
+        padding-top: 32px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}

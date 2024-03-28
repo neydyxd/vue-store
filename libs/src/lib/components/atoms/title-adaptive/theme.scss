@@ -1,0 +1,97 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+@mixin weight {
+    &.normal {
+        font-weight: normal;
+    }
+
+    &.medium {
+        font-weight: 500;
+    }
+
+    &.bold {
+        font-weight: 700;
+    }
+    &.medium {
+        font-weight: 500;
+    }
+}
+
+@mixin color {
+    &.color-default {
+        color: inherit;
+    }
+    &.color-special-white {
+        color: $special-white;
+    }
+    &.color-black-primary {
+        color: $black-primary;
+    }
+    &.color-black-secondary {
+        color: $black-secondary;
+    }
+    &.color-brand-primary {
+        color: $brand-primary;
+    }
+    &.color-general-secondary {
+        color: $general-secondary;
+    }
+}
+
+@mixin title-transform {
+    &.title-transform-uppercase {
+        text-transform: uppercase;
+    }
+    &.title-transform-lowercase {
+        text-transform: lowercase;
+    }
+}
+
+@mixin title-position {
+    &.title-position-left {
+        text-align: left;
+    }
+    &.title-position-center {
+        text-align: center;
+    }
+    &.title-position-right {
+        text-align: right;
+    }
+}
+
+.title-adaptive {
+    @include color;
+    @include title-transform;
+    @include weight;
+    @include title-position;
+}
+
+h1.title-adaptive {
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 500;
+}
+
+h2.title-adaptive {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+h3.title-adaptive {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+h4.title-adaptive {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+h5.title-adaptive {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+}

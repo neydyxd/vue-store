@@ -4,13 +4,22 @@ html {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   line-height: 1.5;
-  tab-size: 4;
+  overflow-y: hidden !important;
   scroll-behavior: smooth;
 }
 body {
   font-family: inherit;
   line-height: inherit;
   margin: 0;
+  overflow: hidden;
+}
+body ::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+body ::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 6px;
 }
 h1,
 h2,
@@ -39,3 +48,4 @@ pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 }
+

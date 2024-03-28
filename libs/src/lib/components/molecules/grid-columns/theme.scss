@@ -1,0 +1,60 @@
+@import "@/assets/styles/tokens/colors.scss";
+@import "@/assets/styles/tokens/screen.scss";
+
+.grid-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    max-width: 1160px;
+
+    margin: auto;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 72px;
+
+        @media screen and (min-width: $small-desktop) {
+            flex-direction: row;
+        }
+
+        &:nth-child(even) {
+            .grid-columns__item-info {
+                @media screen and (min-width: $small-desktop) {
+                    order: 2;
+                }
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media screen and (min-width: $small-desktop) {
+                padding: 32px;
+            }
+
+            h2 {
+                margin-bottom: 24px;
+            }
+        }
+
+        &-image {
+            min-width: auto;
+            height: 193px;
+            width: 100%;
+
+            -webkit-background-size: cover;
+            background-size: cover;
+
+            @media screen and (min-width: $small-desktop) {
+                min-width: 50%;
+                height: 459px;
+                width: auto;
+            }
+        }
+    }
+}

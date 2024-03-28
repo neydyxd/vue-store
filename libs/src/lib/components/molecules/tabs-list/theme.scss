@@ -1,0 +1,9 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.tabs-list {
+    display: flex;
+
+    .active-tab {
+        background-color: $brand-ghost;
+    }
+}

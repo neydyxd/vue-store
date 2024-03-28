@@ -1,0 +1,132 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-file-uploader {
+    width: 100%;
+
+    &__dropzone-container {
+        padding: 16px;
+
+        border: 1px solid $special-divider;
+
+        display: flex;
+        gap: 16px;
+    }
+
+    &__hidden-input {
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+    }
+
+    &__file-label {
+        cursor: pointer;
+    }
+
+    &__preview-container {
+        display: flex;
+        margin-top: 2rem;
+    }
+
+    &__preview-card {
+        display: flex;
+        border: 1px solid #a2a2a2;
+        padding: 5px;
+        margin-left: 5px;
+    }
+
+    &__preview-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid #a2a2a2;
+        background-color: #a2a2a2;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__uploader {
+        width: 72px;
+        height: 72px;
+
+        background-color: $brand-primary;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            max-width: 24px;
+            max-height: 24px;
+
+            fill: $special-white;
+        }
+    }
+
+    &__info {
+        line-height: 21px;
+    }
+
+    &__messages {
+        display: flex;
+        align-items: center;
+
+        margin-top: 8px;
+
+        svg {
+            max-width: 16px;
+            max-height: 16px;
+
+            margin-right: 8px;
+
+            fill: $black-secondary;
+        }
+    }
+
+    &__files {
+        margin-top: 32px;
+    }
+
+    &__file {
+        &-wrapper {
+            margin-top: 16px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        padding: 0 12px;
+
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border: 1px solid $special-divider;
+    }
+
+    .base-tag {
+        margin-top: 8px;
+    }
+
+    &.has-error {
+        .base-file-uploader__dropzone-container {
+            border-color: $error-primary;
+        }
+
+        .base-file-uploader__uploader {
+            background-color: $error-primary;
+
+            svg {
+                fill: $special-white;
+            }
+        }
+    }
+}

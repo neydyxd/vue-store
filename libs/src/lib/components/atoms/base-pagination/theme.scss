@@ -1,0 +1,65 @@
+@import "@/assets/styles/tokens/colors.scss";
+@import "@/assets/styles/tokens/screen.scss";
+
+.base-pagination {
+    display: flex;
+    gap: 12px;
+
+    width: 100%;
+
+    @media screen and (min-width: $mobile-small) {
+        width: auto;
+    }
+
+    .pagination-page {
+        padding: 0 8px;
+
+        &.size-medium {
+            max-width: 40px;
+            min-width: 40px;
+        }
+        &.size-small {
+            max-width: 32px;
+        }
+        &.size-extra-small {
+            max-width: 24px;
+        }
+
+        &:hover {
+            &:not(.page-active) {
+                background: transparent;
+
+                .text-adaptive {
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+
+    .pagination-arrow-control {
+        min-height: auto;
+        max-width: 88px;
+        width: 100%;
+
+        @media screen and (min-width: $mobile-small) {
+            min-width: 88px;
+            width: 88px;
+        }
+
+        &-size-medium {
+            height: 40px;
+        }
+        &-size-small {
+            height: 32px;
+        }
+
+        &-size-extra-small {
+            height: 24px;
+        }
+    }
+
+    .page-active,
+    .pagination-arrow-control {
+        background: $brand-ghost;
+    }
+}

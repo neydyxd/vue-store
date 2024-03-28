@@ -1,0 +1,43 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.select-carousel {
+    &__label {
+        margin-bottom: 16px;
+    }
+
+    &__wrapper {
+        display: flex;
+
+        border: 1px solid $special-divider;
+
+        height: 56px;
+
+        button {
+            min-width: 56px;
+            height: 56px;
+        }
+
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+
+            .swiper {
+                height: 100%;
+            }
+
+            .swiper-slide {
+                justify-content: center;
+            }
+        }
+
+        .variant-ghost {
+            svg {
+                fill: $black-primary;
+            }
+        }
+    }
+
+    .button-icon {
+        height: 100%;
+    }
+}

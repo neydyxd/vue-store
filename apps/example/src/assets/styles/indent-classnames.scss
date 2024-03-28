@@ -1,0 +1,28 @@
+.d-flex {
+    display: flex;
+}
+.jc-sb {
+    justify-content: space-between;
+}
+.jc-fe {
+    justify-content: flex-end;
+}
+.ai-c {
+    align-items: center;
+}
+.ai-s {
+    align-items: start;
+}
+.ai-fe {
+    align-items: flex-end;
+}
+.fd-c {
+    flex-direction: column;
+}
+.fd-r {
+    flex-direction: row;
+}
+
+.title-header {
+    text-transform: uppercase;
+}

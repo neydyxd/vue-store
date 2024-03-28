@@ -1,0 +1,27 @@
+@import "@/assets/styles/tokens/screen.scss";
+
+.container {
+    margin: 0;
+    padding: 0 16px;
+    width: 100%;
+
+    @media screen and (min-width: $small-desktop) {
+        max-width: $extra-large-desktop;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    &.fluid-container {
+        padding: 0;
+
+        .swiper {
+            @media screen and (max-width: $max-small-desktop) {
+                padding: 0 24px;
+            }
+        }
+    }
+
+    &.resize-container {
+        max-width: none;
+    }
+}

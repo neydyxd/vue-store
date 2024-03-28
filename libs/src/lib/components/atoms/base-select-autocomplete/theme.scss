@@ -1,0 +1,140 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-select-autocomplete {
+    width: 100%;
+
+    label {
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    &__wrapper {
+        width: 100%;
+
+        background-color: $special-white;
+
+        position: relative;
+
+        .v-field {
+            padding: 0 24px;
+        }
+
+        .v-field__append-inner,
+        .v-field__input {
+            padding: 0;
+        }
+
+        .v-field__append-inner {
+            display: flex;
+            align-items: center;
+        }
+
+        .v-field__input {
+            display: flex;
+            align-items: center;
+
+            input {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        &.variant {
+            &-outlined {
+                border: 1px solid $special-divider;
+
+                &.disabled-input {
+                    border: none;
+
+                    background: $black-ghost;
+
+                    svg {
+                        fill: $black-secondary;
+                    }
+                }
+
+                &:hover {
+                    &:not(.focus-input, .disabled-input).empty-input {
+                        transition: 0.3s all ease-in-out;
+                        border-color: $brand-primary;
+                    }
+                }
+
+                &.focus-input {
+                    border: 2px solid $brand-secondary;
+                    box-shadow: 0 0 6px #bac4e0;
+                }
+            }
+
+            &-underlined {
+                border-bottom: 2px solid $special-divider;
+
+                &.disabled-input {
+                    border-bottom: 2px solid $special-disabled-primary;
+
+                    background: $black-ghost;
+
+                    svg {
+                        fill: $black-secondary;
+                    }
+                }
+
+                &:hover {
+                    &:not(.focus-input, .disabled-input).empty-input {
+                        transition: 0.3s all ease-in-out;
+                        border-color: $brand-primary;
+                    }
+                }
+
+                &.focus-input {
+                    border-bottom: 2px solid $brand-secondary;
+                }
+            }
+        }
+
+        &.size {
+            &-giant {
+                .v-field__input {
+                    min-height: 56px;
+                }
+            }
+
+            &-large {
+                .v-field__input {
+                    min-height: 48px;
+                }
+            }
+
+            &-medium {
+                .v-field__input {
+                    min-height: 40px;
+                }
+            }
+
+            &-small {
+                .v-field__input {
+                    min-height: 32px;
+                }
+            }
+        }
+
+        .v-field {
+            .v-field__overlay {
+                display: none !important;
+            }
+        }
+
+        .v-field__outline {
+            display: none;
+        }
+
+        .v-field__input {
+            font-size: 14px;
+
+            .v-select__selection {
+                display: flex;
+                align-content: center !important;
+            }
+        }
+    }
+}

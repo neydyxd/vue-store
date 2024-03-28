@@ -1,0 +1,64 @@
+@import "@/assets/styles/tokens/colors.scss";
+
+.base-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 40px;
+    width: 100%;
+
+    max-width: 160px;
+
+    &__controls {
+        background-color: $brand-ghost;
+
+        width: 28px;
+        height: 28px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    svg {
+        max-width: 28px;
+        max-height: 28px;
+
+        cursor: pointer;
+
+        fill: $brand-primary;
+    }
+
+    &__values {
+        width: max-content;
+
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        padding: 0 12px;
+
+        line-height: 0;
+
+        input {
+            width: 100%;
+            max-width: 99.99%;
+
+            text-align: center;
+            vertical-align: bottom;
+
+            font-weight: bold;
+            font-size: 14px;
+
+            color: $black-primary;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+    }
+}
