@@ -1,10 +1,10 @@
 <template>
   <v-sheet :width="props.width">
     <v-form className="form">
-      <Input v-model="login" width="100%" variant="solo-filled" label="Логин" @handleChange="handleChangeLogin"></Input>
-      <Input v-model="password" width="100%" variant="solo-filled" label="Пароль"
+      <Input v-model="login" width="100%" variant="underlined" label="Логин" @handleChange="handleChangeLogin"></Input>
+      <Input v-model="password" width="100%" variant="underlined" label="Пароль"
         @handleChange="handleChangePassword"></Input>
-      <Button :disabled="validateData()" width="100px" size="large" @click="handleButtonClick">Войти</Button>
+      <Button :disabled="validateData()" width="100px" color="blue" size="large" @click="handleButtonClick">Войти</Button>
     </v-form>
   </v-sheet>
 </template>

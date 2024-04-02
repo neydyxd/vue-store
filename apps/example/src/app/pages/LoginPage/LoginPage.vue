@@ -1,5 +1,6 @@
 <template>
   <AuthLayout>
+    <h2>Авторизация</h2>
     <AuthForm @login="handleLogin" @password="handlePassword" @click="handleButtonClick" width="600px" />
   </AuthLayout>
 </template>

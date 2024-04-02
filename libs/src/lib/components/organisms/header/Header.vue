@@ -1,5 +1,5 @@
 <template>
-  <v-layout className="header">
+  <v-layout>
     <v-app-bar style="z-index: 1555;" :density="props.density" :color="props.color">
       <slot></slot>
     </v-app-bar>
@@ -8,9 +8,6 @@
 
 <script setup lang="ts">
 import { PropType } from 'vue';
-
-import "./theme.scss"
-
 
 type HeaderProps = {
   density: 'compact' | 'comfortable' | 'prominent'

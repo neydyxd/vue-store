@@ -3,8 +3,10 @@ import './styles.scss';
 import App from './app/App.vue';
 import router from './routes';
 import { svgSpritePlugin } from "vue-svg-sprite";
+import "./api/instance"
 
 import 'vuetify/styles';
+import '@mdi/font/css/materialdesignicons.min.css'
 import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';

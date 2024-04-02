@@ -7,6 +7,9 @@ html {
   overflow-y: hidden !important;
   scroll-behavior: smooth;
 }
+input {
+  z-index: 100;
+}
 body {
   font-family: inherit;
   line-height: inherit;
