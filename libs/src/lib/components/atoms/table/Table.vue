@@ -54,6 +54,7 @@ export default {
       currentPage: 1,
       searchQuery: '',
       filterData: [],
+      filters: ''
     };
   },
   computed: {
@@ -92,7 +93,7 @@ export default {
     handleFilterChange(event, field) {
       this.columns.find(col => col.field === field).filterValue = event.target.value;
       this.applyFilters();
-      console.log(this.searchQuery)
+      this.$emit('set-filter', field, event.target.value);
     },
 
     applyFilters() {
