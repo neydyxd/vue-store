@@ -1,15 +1,15 @@
 <template>
-  <layout>
+  <layout v-if="dataCount !== 0">
     <Table :loading="loading" @set-filter="handleSetFilter" @page-changed="handlePageChanged"
       @items-per-page-changed="handleItemsPerPageChanged" :data="comments" :columns="headers"
-      :toggleValues="[5, 10, 15]" />
+      :toggleValues="[5, 10, 15]" :count="dataCount" />
     <ErrorAlert ref="notificationRef" />
   </layout>
 </template>
 
 <script lang="ts">
 import Layout from '../../components/Layout/Layout.vue';
-import { getCommentsWithPagination } from "../../../api/comments/index"
+import { getCommentsWithPagination, getAllComments } from "../../../api/comments/index"
 import { Table, ErrorAlert } from "@store/libs"
 import { defineComponent } from 'vue';
 import type { AxiosError } from 'axios';
@@ -37,7 +37,8 @@ export default defineComponent({
       itemsPerPage: 5,
       loading: Boolean,
       field: '',
-      value: ''
+      value: '',
+      dataCount: 0,
     };
   },
   methods: {
@@ -56,6 +57,16 @@ export default defineComponent({
       this.field = field;
       this.value = value
     },
+  },
+  mounted() {
+    getAllComments()
+      .then(({ data }) => {
+        this.dataCount = data.length;
+      })
+      .catch((error: AxiosError) => {
+        console.error("Error fetching comments:", error);
+        this.$refs.notificationRef.notify("Что-то пошло не так");
+      })
   },
   watch: {
     currentPage: {
@@ -91,11 +102,9 @@ export default defineComponent({
       immediate: true
     },
     field(newField) {
-      // Вызываем debouncedSetFilter при изменении поля с задержкой
       this.debouncedSetFilter(newField, this.value);
     },
     value(newValue) {
-      // Вызываем debouncedSetFilter при изменении значения с задержкой
       this.debouncedSetFilter(this.field, newValue);
     }
   },

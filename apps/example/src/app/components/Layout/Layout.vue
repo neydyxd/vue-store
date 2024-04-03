@@ -12,11 +12,11 @@
       </div>
     </Header>
     <Menu backgroundColor="#2196F3" slot="menu" id="menu">
-      <div style="padding: 56px 0 0 0;">
+      <div style="padding: 56px 20px 0 20px;">
         <List  lines="one">
-          <ListItem variant="elevated" background-color="white" rounded="lg" margin-bottom="15px">Hello</ListItem>
-          <ListItem variant="elevated" background-color="white" rounded="lg" margin-bottom="15px">Hello</ListItem>
-          <ListItem variant="elevated" background-color="white" rounded="lg">Hello</ListItem>
+          <ListItem variant="elevated" background-color="white" rounded="lg" margin-bottom="15px">Пункт 1</ListItem>
+          <ListItem variant="elevated" background-color="white" rounded="lg" margin-bottom="15px">Пункт 2</ListItem>
+          <ListItem variant="elevated" background-color="white" rounded="lg">Пункт 3</ListItem>
         </List>
       </div>
     </Menu>

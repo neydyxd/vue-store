@@ -34,14 +34,14 @@
     <div className="table__footer">
       <div>
         <label className="table__lable" for="itemsPerPage">Элементов на странице:</label>
-        <v-btn-toggle variant="outlined" v-model="itemsPerPage" :items="toggleValues" divided
+        <v-btn-toggle variant="outlined" v-model="itemsPerPage" :items="toggleValues"  mandatory
           @update:modelValue="handleItemsPerPageChange">
           <template v-for="(item) in toggleValues">
             <v-btn v-bind:value="item">{{ item }}</v-btn>
           </template>
         </v-btn-toggle>
       </div>
-      <v-pagination rounded="0" className="table__pagination" v-model="currentPage" :length="100"
+      <v-pagination rounded="0" className="table__pagination" v-model="currentPage" :length="length"
         @update:modelValue="handlePageChange"></v-pagination>
     </div>
   </div>
@@ -54,7 +54,8 @@ export default {
     columns: Array,
     data: Array,
     loading: Boolean,
-    toggleValues: Array
+    toggleValues: Array,
+    count: Number,
   },
   data() {
     return {
@@ -65,8 +66,12 @@ export default {
       filters: '',
       selectedRows: [],
       ideterminate: false,
-      
+      length: 100,
+
     };
+  },
+  mounted() {
+    this.length = Math.ceil(this.count/this.itemsPerPage)
   },
   computed: {
     filteredData() {
@@ -101,6 +106,7 @@ export default {
     },
     handleItemsPerPageChange(value) {
       this.itemsPerPage = value;
+      this.length = Math.ceil(this.count/value)
       this.currentPage = 1;
       this.$emit('items-per-page-changed', this.currentPage, this.itemsPerPage);
     },
