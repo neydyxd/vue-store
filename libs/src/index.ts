@@ -16,6 +16,7 @@ export {default as AuthForm} from "./lib/components/organisms/auth-form/AuthForm
 export {default as Header} from "./lib/components/organisms/header/Header.vue"
 export {default as Menu} from "./lib/components/organisms/menu/Menu.vue"
 export {default as Footer} from "./lib/components/organisms/footer/Footer.vue"
+export {default as ErrorAlert} from "./lib/components/organisms/error-alert/ErrorAlert.vue"
 
 //Шаблоны
 export {default as AuthLayout} from "./lib/components/templates/auth-layout/AuthLayout.vue"

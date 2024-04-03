@@ -3,13 +3,14 @@
     <Table :loading="loading" @set-filter="handleSetFilter" @page-changed="handlePageChanged"
       @items-per-page-changed="handleItemsPerPageChanged" :data="comments" :columns="headers"
       :toggleValues="[5, 10, 15]" />
+    <ErrorAlert ref="notificationRef" />
   </layout>
 </template>
 
 <script lang="ts">
 import Layout from '../../components/Layout/Layout.vue';
 import { getCommentsWithPagination } from "../../../api/comments/index"
-import { Table } from "@store/libs"
+import { Table, ErrorAlert } from "@store/libs"
 import { defineComponent } from 'vue';
 import type { AxiosError } from 'axios';
 import { debounce } from 'lodash';
@@ -27,7 +28,7 @@ const headers = [{
 ]
 
 export default defineComponent({
-  components: { Table, Layout },
+  components: { Table, Layout, ErrorAlert },
   data() {
     return {
       comments: [],
@@ -67,6 +68,7 @@ export default defineComponent({
           })
           .catch((error: AxiosError) => {
             console.error("Error fetching comments:", error);
+            this.$refs.notificationRef.notify("Что-то пошло не так");
           })
           .finally(() => this.loading = false)
       },
@@ -82,6 +84,7 @@ export default defineComponent({
           })
           .catch((error: AxiosError) => {
             console.error("Error fetching comments:", error);
+            this.$refs.notificationRef.notify("Что-то пошло не так");
           })
           .finally(() => this.loading = false)
       },

@@ -1,5 +1,5 @@
 <template>
-  <v-list :lines="lines">
+  <v-list bg-color="blue" :lines="lines">
     <slot></slot>
   </v-list>
 </template>

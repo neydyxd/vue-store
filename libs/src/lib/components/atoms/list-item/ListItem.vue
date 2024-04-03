@@ -14,11 +14,12 @@ type ListItemProps = {
   rounded?: string;
   width?: string;
   url?: string;
+  marginBottom?: string;
 }
 
 import { computed } from 'vue';
 
-const {variant,subtitle, backgroundColor, color, rounded, width, url} = defineProps<ListItemProps>();
+const {variant,subtitle, backgroundColor, color, rounded, width, url, marginBottom} = defineProps<ListItemProps>();
 
 const emit = defineEmits(['click']);
 
@@ -29,7 +30,8 @@ const handleClick = () => {
 const dynamicStyles = computed(() => {
   return {
     backgroundColor: backgroundColor || "white",
-    color: color || 'black'
+    color: color || 'black',
+    marginBottom: marginBottom || '0px'
   };
 });
 

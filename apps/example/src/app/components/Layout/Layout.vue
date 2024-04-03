@@ -11,12 +11,12 @@
         </DropdownMenu>
       </div>
     </Header>
-    <Menu backgroundColor="#ebeded" slot="menu" id="menu">
+    <Menu backgroundColor="#2196F3" slot="menu" id="menu">
       <div style="padding: 56px 0 0 0;">
-        <List lines="one">
-          <ListItem variant="elevated" background-color="#69cbe0" rounded="lg">Hello</ListItem>
-          <ListItem variant="elevated" background-color="#69cbe0" rounded="lg">Hello</ListItem>
-          <ListItem variant="elevated" background-color="#69cbe0" rounded="lg">Hello</ListItem>
+        <List  lines="one">
+          <ListItem variant="elevated" background-color="white" rounded="lg" margin-bottom="15px">Hello</ListItem>
+          <ListItem variant="elevated" background-color="white" rounded="lg" margin-bottom="15px">Hello</ListItem>
+          <ListItem variant="elevated" background-color="white" rounded="lg">Hello</ListItem>
         </List>
       </div>
     </Menu>
@@ -24,7 +24,7 @@
       <div className="layout__content">
         <slot></slot>
         <Footer>
-          <h2 style="text-align: center; border-top: 1px solid grey; padding: 10px;">Test footer component</h2>
+          <h2 style="text-align: center;padding: 10px;">Test footer component</h2>
         </Footer>
       </div>
     </div>
@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { MainLayout, Header, Menu, DropdownMenu, ListItem, Button, Footer, List } from "@store/libs"
+import { MainLayout, Header, Menu, DropdownMenu, ListItem, Footer, List } from "@store/libs"
 import "./theme.scss"
 import { useRouter } from "vue-router";
 const router = useRouter();

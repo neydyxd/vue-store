@@ -3,6 +3,11 @@
     <v-table>
       <thead>
         <tr>
+          <th>
+            <v-checkbox color="blue" style="display: flex; align-items: center;"
+              :indeterminate="selectedRows.length > 0 && !isAllSelected" @change="toggleAllSelection"
+              v-model="isAllSelected" />
+          </th>
           <th v-for="column in columns" :key="column.field">
             <div className="table__head">
               <span className="table__title">{{ column.name }}</span>
@@ -19,6 +24,9 @@
           </td>
         </tr>
         <tr v-for="row in filterData" :key="row.id">
+          <td style="width: 50px;">
+            <v-checkbox color="blue" :value="row.id" v-model="selectedRows" />
+          </td>
           <td v-for="column in columns" :key="column.field">{{ row[column.field] }}</td>
         </tr>
       </tbody>
@@ -54,7 +62,10 @@ export default {
       currentPage: 1,
       searchQuery: '',
       filterData: [],
-      filters: ''
+      filters: '',
+      selectedRows: [],
+      ideterminate: false,
+      
     };
   },
   computed: {
@@ -70,7 +81,10 @@ export default {
           return cellValue.includes(filterValue);
         });
       });
-    }
+    },
+    isAllSelected() {
+      return this.selectedRows.length === this.filterData.length && this.filterData.length > 0;
+    },
   },
   watch: {
     data: {
@@ -78,7 +92,7 @@ export default {
       handler() {
         this.applyFilters();
       }
-    }
+    },
   },
   methods: {
     handlePageChange(page) {
@@ -95,7 +109,6 @@ export default {
       this.applyFilters();
       this.$emit('set-filter', field, event.target.value);
     },
-
     applyFilters() {
       this.filterData = this.data.filter(row => {
         return this.columns.every(col => {
@@ -104,7 +117,14 @@ export default {
           return cellValue.includes(filterValue);
         });
       });
-    }
+    },
+    toggleAllSelection() {
+      if (this.isAllSelected) {
+        this.selectedRows = [];
+      } else {
+        this.selectedRows = this.filterData.map(row => row.id);
+      }
+    },
   },
 };
 </script>
