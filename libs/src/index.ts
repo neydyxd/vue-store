@@ -17,6 +17,7 @@ export {default as Header} from "./lib/components/organisms/header/Header.vue"
 export {default as Menu} from "./lib/components/organisms/menu/Menu.vue"
 export {default as Footer} from "./lib/components/organisms/footer/Footer.vue"
 export {default as ErrorAlert} from "./lib/components/organisms/error-alert/ErrorAlert.vue"
+export {default as NotificationMenu} from "./lib/components/organisms/notification-menu/NotificationMenu.vue"
 
 //Шаблоны
 export {default as AuthLayout} from "./lib/components/templates/auth-layout/AuthLayout.vue"

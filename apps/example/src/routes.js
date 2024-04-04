@@ -5,7 +5,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
-    component: MainPage
+    component: MainPage,
+    props: (route) => ({
+      currentPage: parseInt(route.query.page) || 1,
+      rowsInPage: parseInt(route.query.rows) || 5
+    })
   },
   {
     path: '/sign-in',

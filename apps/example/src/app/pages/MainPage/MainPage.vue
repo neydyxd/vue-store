@@ -14,6 +14,7 @@ import { Table, ErrorAlert } from "@store/libs"
 import { defineComponent } from 'vue';
 import type { AxiosError } from 'axios';
 import { debounce } from 'lodash';
+const searchParams = new URLSearchParams(window.location.search);
 
 const headers = [{
   name: "Name",
@@ -33,9 +34,9 @@ export default defineComponent({
     return {
       comments: [],
       headers: headers,
-      currentPage: 1,
-      itemsPerPage: 5,
-      loading: Boolean,
+      currentPage: Number(searchParams.get('page')) || 1,
+      itemsPerPage: Number(searchParams.get('rows')) || 5,
+      loading: false,
       field: '',
       value: '',
       dataCount: 0,
@@ -48,10 +49,18 @@ export default defineComponent({
     handlePageChanged(page, itemsPerPage) {
       this.currentPage = page;
       this.itemsPerPage = itemsPerPage;
+      const query = { ...this.$route.query };
+      query.page = String(page);
+      query.rows = String(itemsPerPage);
+      this.$router.push({ query });
     },
     handleItemsPerPageChanged(page, itemsPerPage) {
       this.currentPage = page;
       this.itemsPerPage = itemsPerPage;
+      const query = { ...this.$route.query };
+      query.page = String(page);
+      query.rows = String(itemsPerPage);
+      this.$router.push({ query });
     },
     handleSetFilter(field, value) {
       this.field = field;
@@ -71,6 +80,7 @@ export default defineComponent({
   watch: {
     currentPage: {
       handler(newValue) {
+        console.log(newValue)
         this.loading = true;
         this.comments = [];
         getCommentsWithPagination(newValue - 1, this.itemsPerPage)

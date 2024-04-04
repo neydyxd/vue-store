@@ -49,6 +49,7 @@
 
 <script>
 import "./theme.scss"
+const searchParams = new URLSearchParams(window.location.search);
 export default {
   props: {
     columns: Array,
@@ -59,8 +60,8 @@ export default {
   },
   data() {
     return {
-      itemsPerPage: 5,
-      currentPage: 1,
+      itemsPerPage: Number(searchParams.get('rows')) || 5,
+      currentPage: Number(searchParams.get('page')) || 1,
       searchQuery: '',
       filterData: [],
       filters: '',

@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-footer color="blue" style="margin-top: auto;">
+    <v-footer style="margin-top: auto;border-top: 1px solid black;">
       <div style="width: 100%;">
       <slot></slot>
     </div>
